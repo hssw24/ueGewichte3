@@ -94,7 +94,7 @@
                 heading.innerText = "Information";
                 
                 let paragraph = document.createElement("div");
-                paragraph.innerHTML = "<p>g = Gramm ~ kg = Kilogramm ~ t = Tonne</p><p><math><mfrac><mn>1</mn><mn>4</mn></mfrac></math> kg = 250 g ~ <math><mfrac><mn>1</mn><mn>2</mn></mfrac></math> kg = 500 g ~ <math><mfrac><mn>3</mn><mn>4</mn></mfrac></math> kg = 750 g</p>";
+                paragraph.innerHTML = "<p>g = Gramm ~ kg = Kilogramm ~ t = Tonne</p><p><math><mfrac><mn>1</mn><mn>4</mn></mfrac></math> kg = 250 g ~ <math><mfrac><mn>1</mn><mn>2</mn></mfrac></math> kg = 500 g ~ <math><mfrac><mn>3</mn><mn>4</mn></mfrac></math> kg = 750 g</p><p><math><mfrac><mn>1</mn><mn>4</mn></mfrac></math> t = 250 kg ~ <math><mfrac><mn>1</mn><mn>2</mn></mfrac></math> t = 500 kg ~ <math><mfrac><mn>3</mn><mn>4</mn></mfrac></math> t = 750 kg</p>";
                 let table = document.createElement("table");
                 table.style.width = "100%";
                 table.style.borderCollapse = "collapse";
@@ -118,7 +118,7 @@
             }
         </script>
 
-        <h2>Gewichte umrechnen 2</h2>
+        <h3>Gewichte umrechnen 3</h3>
         <div class="question" id="question"></div>
         <div id="answers"></div>
         <div class="stats">
@@ -131,11 +131,11 @@
 
     <script>
         const questions = [
-            { question: "250 g = ? kg", correct: "<math><mfrac><mn>1</mn><mn>4</mn></mfrac></math>", options: ["<math><mfrac><mn>3</mn><mn>4</mn></mfrac></math> ", "<math><mfrac><mn>1</mn><mn>2</mn></mfrac></math> ", "<math><mfrac><mn>1</mn><mn>4</mn></mfrac></math> ", "250"] },
-            { question: "500 g = ? kg", correct: "<math><mfrac><mn>1</mn><mn>2</mn></mfrac></math>", options: ["<math><mfrac><mn>3</mn><mn>4</mn></mfrac></math> ", "<math><mfrac><mn>1</mn><mn>2</mn></mfrac></math> ", "<math><mfrac><mn>1</mn><mn>4</mn></mfrac></math> ", "500"] },
+            { question: "250 g = ? kg", correct: "<math><mfrac><mn>1</mn><mn>4</mn></mfrac></math>", options: ["<math><mfrac><mn>3</mn><mn>4</mn></mfrac></math>", "<math><mfrac><mn>1</mn><mn>2</mn></mfrac></math>", "<math><mfrac><mn>1</mn><mn>4</mn></mfrac></math>", "250"] },
+            { question: "500 g = ? kg", correct: "<math><mfrac><mn>1</mn><mn>2</mn></mfrac></math>", options: ["<math><mfrac><mn>3</mn><mn>4</mn></mfrac></math>", "<math><mfrac><mn>1</mn><mn>2</mn></mfrac></math>", "<math><mfrac><mn>1</mn><mn>4</mn></mfrac></math>", "500"] },
             { question: "750 g = ? kg", correct: "<math><mfrac><mn>3</mn><mn>4</mn></mfrac></math>", options: ["<math><mfrac><mn>3</mn><mn>4</mn></mfrac></math>", "<math><mfrac><mn>1</mn><mn>4</mn></mfrac></math>", "<math><mfrac><mn>1</mn><mn>2</mn></mfrac></math>", "750"] },
-            { question: "250 kg = ? t", correct: "<math><mfrac><mn>1</mn><mn>4</mn></mfrac></math>", options: ["<math><mfrac><mn>3</mn><mn>4</mn></mfrac></math> ", "<math><mfrac><mn>1</mn><mn>2</mn></mfrac></math> ", "<math><mfrac><mn>1</mn><mn>4</mn></mfrac></math> ", "250"] },
-            { question: "500 kg = ? t", correct: "<math><mfrac><mn>1</mn><mn>2</mn></mfrac></math>", options: ["<math><mfrac><mn>3</mn><mn>4</mn></mfrac></math> ", "<math><mfrac><mn>1</mn><mn>2</mn></mfrac></math> ", "<math><mfrac><mn>1</mn><mn>4</mn></mfrac></math> ", "500"] },
+            { question: "250 kg = ? t", correct: "<math><mfrac><mn>1</mn><mn>4</mn></mfrac></math>", options: ["<math><mfrac><mn>3</mn><mn>4</mn></mfrac></math>", "<math><mfrac><mn>1</mn><mn>2</mn></mfrac></math>", "<math><mfrac><mn>1</mn><mn>4</mn></mfrac></math>", "250"] },
+            { question: "500 kg = ? t", correct: "<math><mfrac><mn>1</mn><mn>2</mn></mfrac></math>", options: ["<math><mfrac><mn>3</mn><mn>4</mn></mfrac></math>", "<math><mfrac><mn>1</mn><mn>2</mn></mfrac></math>", "<math><mfrac><mn>1</mn><mn>4</mn></mfrac></math>", "500"] },
             { question: "750 kg = ? t", correct: "<math><mfrac><mn>3</mn><mn>4</mn></mfrac></math>", options: ["<math><mfrac><mn>3</mn><mn>4</mn></mfrac></math>", "<math><mfrac><mn>1</mn><mn>4</mn></mfrac></math>", "<math><mfrac><mn>1</mn><mn>2</mn></mfrac></math>", "750"] },
 
 
@@ -145,13 +145,16 @@
             { question: "<math><mfrac><mn>1</mn><mn>4</mn></mfrac></math>  t = ? kg", correct: "250", options: ["250", "500", "750", "1000"] },
             { question: "<math><mfrac><mn>3</mn><mn>4</mn></mfrac></math>  kg = ? g", correct: "750", options: ["250", "500", "750", "1000"] },
             { question: "<math><mfrac><mn>3</mn><mn>4</mn></mfrac></math>  t = ? kg", correct: "750", options: ["250", "500", "750", "1000"] },
-/*
-            { question: "3 t = ? kg", correct: "3000", options: ["3", "30", "3000", "300"] },
-            { question: "7 kg = ? g", correct: "7000", options: ["70", "7000", "700", "7"] },
-            { question: "2 t = ? kg", correct: "2000", options: ["2", "2000", "200", "20"] },
-            { question: "9000 g = ? kg", correct: "9", options: ["90", "9", "9000", "900"] },
+
+            { question: "3 t 200 kg = ? kg", correct: "3200", options: ["32", "30", "3200", "320"] },
+            { question: "7 kg 250 g = ? g", correct: "7250", options: ["72", "7250", "725", "7"] },
+            { question: "2<math><mfrac><mn>1</mn><mn>2</mn></mfrac></math> t = ? kg", correct: "2500", options: ["2000", "2500", "250", "25"] },
+            { question: "9750 g = ? kg", correct: "9<math><mfrac><mn>3</mn><mn>4</mn></mfrac></math>", options: ["9<math><mfrac><mn>1</mn><mn>4</mn></mfrac></math>", "9<math><mfrac><mn>3</mn><mn>4</mn></mfrac></math>", "9<math><mfrac><mn>1</mn><mn>2</mn></mfrac></math>", "9000"] },
+            { question: "6250 kg = ? t", correct: "6<math><mfrac><mn>1</mn><mn>4</mn></mfrac></math>", options: ["6<math><mfrac><mn>1</mn><mn>4</mn></mfrac></math>", "6<math><mfrac><mn>3</mn><mn>4</mn></mfrac></math>", "6<math><mfrac><mn>1</mn><mn>2</mn></mfrac></math>", "6250"] },
+
+            /*
             { question: "10000 g = ? kg", correct: "10", options: ["1000", "10", "10000", "100"] },
-            { question: "10 kg = ? g", correct: "10000", options: ["100", "10000", "1000", "10"] },
+            { question: "10600 kg = ? g", correct: "10000", options: ["100", "10000", "1000", "10"] },
             { question: "4 t = ? kg", correct: "4000", options: ["4", "40", "4000", "400"] },
             { question: "7000 kg = ? t", correct: "7", options: ["7000", "70", "7", "700"] },
             { question: "6000 g = ? kg", correct: "6", options: ["600", "6", "6000", "60"] },
