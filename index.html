@@ -131,6 +131,10 @@
             <p>Zeit: <span id="timer">0</span> Sekunden</p>
         </div>
         <button id="restartBtn" style="display:none;" onclick="startGame()">Nochmal spielen</button>
+
+        <button id="mehrKonfetti" style="display:none;" onclick="confettiExplosion6()">Mehr Konfetti 🙂</button>
+
+
     </div>
 
     <script>
@@ -207,6 +211,9 @@
             document.getElementById("counter").textContent = "1";
             document.getElementById("timer").textContent = "0";
             document.getElementById("restartBtn").style.display = "none";
+
+            document.getElementById("mehrKonfetti").style.display = "none";
+
             interval = setInterval(() => {
                 timer++;
                 document.getElementById("timer").textContent = timer;
@@ -273,6 +280,9 @@
             document.getElementById("answers").innerHTML = "";
             document.getElementById("counter").innerHTML = "30";
             document.getElementById("restartBtn").style.display = "block";
+
+            document.getElementById("mehrKonfetti").style.display = "block";
+
             gameActive = false;
 
             confettiExplosion3()
@@ -283,21 +293,6 @@
     </script>
 
 <script>
-    function confettiExplosion1() {
-      confetti({
-        particleCount: 120, // Partikelanzahl
-        spread: 80,         // Winkel
-        origin: { y: 0.6 }
-      });
-    }
-
-    function confettiExplosion2() {
-      confetti({
-        particleCount: 1000,
-        spread: 80,
-        origin: { y: 0.6 }
-      });
-    }
 
     function confettiExplosion3() {
       confetti({
@@ -307,32 +302,13 @@
       });
     }
 
-
-    function confettiExplosion4() {
-      confetti({
-        particleCount: 1000,
-        spread: 80,
-        origin: { y: 0.6 }
-      });
-    }
-
-    function confettiExplosion5() {
-      confetti({
-        particleCount: 1000,
-        spread: 40,
-        origin: { y: 0.6 }
-      });
-    }
-
     function confettiExplosion6() {
       confetti({
-        particleCount: 1000,
+        particleCount: 3000,
         spread: 180,
         origin: { y: 0.6 }
       });
     }
-
-
 
 </script>
 
