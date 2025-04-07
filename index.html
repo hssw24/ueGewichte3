@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gewichte umrechnen</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -270,9 +274,68 @@
             document.getElementById("counter").innerHTML = "30";
             document.getElementById("restartBtn").style.display = "block";
             gameActive = false;
+
+            confettiExplosion3()
+
         }
 
         startGame();
     </script>
+
+<script>
+    function confettiExplosion1() {
+      confetti({
+        particleCount: 120, // Partikelanzahl
+        spread: 80,         // Winkel
+        origin: { y: 0.6 }
+      });
+    }
+
+    function confettiExplosion2() {
+      confetti({
+        particleCount: 1000,
+        spread: 80,
+        origin: { y: 0.6 }
+      });
+    }
+
+    function confettiExplosion3() {
+      confetti({
+        particleCount: 1000,
+        spread: 80,
+        origin: { y: 0.3 }
+      });
+    }
+
+
+    function confettiExplosion4() {
+      confetti({
+        particleCount: 1000,
+        spread: 80,
+        origin: { y: 0.6 }
+      });
+    }
+
+    function confettiExplosion5() {
+      confetti({
+        particleCount: 1000,
+        spread: 40,
+        origin: { y: 0.6 }
+      });
+    }
+
+    function confettiExplosion6() {
+      confetti({
+        particleCount: 1000,
+        spread: 180,
+        origin: { y: 0.6 }
+      });
+    }
+
+
+
+</script>
+
+
 </body>
 </html>
